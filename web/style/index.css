@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+span.unit {
+    position: absolute;
+    display: inline-block;
+    border: #f6f6f6;
+    border-style: solid;
+    border-width: 1px;
+}
+
+span.unit:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+#link-to-image:hover {
+    background-color: orangered !important;
+    cursor: pointer;
+}
+
+#link-to-image:hover span {
+    background-color: orangered !important;
+    cursor: pointer;
+}
+
+span.unit.contained {
+    font-family: 'Archivo Narrow', sans-serif;
+    background-color: none;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#grid {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

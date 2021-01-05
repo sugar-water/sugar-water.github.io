@@ -1,0 +1,14 @@
+{
+  "name": "sugar-water.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website/Portfolio",
+  "main": "index.js",
+  "repository": "https://github.com/sugar-water/sugar-water.github.io.git",
+  "author": "Tomás Phillips",
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^6.3.1",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1"
+  }
+}
