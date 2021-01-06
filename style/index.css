@@ -79,7 +79,7 @@ span.unit.contained {
     border-width: 0px !important;
 }
 
-.menu-button a {
+.menu-button > a {
     font-family: 'Archivo Narrow', sans-serif;
     display: inline-block;
     position: relative;
