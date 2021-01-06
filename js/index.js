@@ -2,6 +2,7 @@ let grid = document.getElementById("grid");
 let tempCanvas = document.createElement("canvas");
 let tempCxt = tempCanvas.getContext("2d");
 
+
 const quote = "/)"
 
 // JS needs python comprehensions.
