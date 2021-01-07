@@ -190,7 +190,7 @@ let setup = (n) =>
         .catch(console.log);
 }
 
-window.onload = () => {
+let run = () => {
     if (document.body.clientWidth < 400) { setup(250) }
     else if (document.body.clientWidth < 600) { setup(200) }
     else if (document.body.clientWidth < 800) { setup(500) }
@@ -199,3 +199,35 @@ window.onload = () => {
     else if (document.body.clientWidth < 1500) { setup(1100) }
     else if (document.body.clientWidth < 2000) { setup(1400) }
 }
+
+window.onload = run;
+
+
+
+    // Message variable contains the div object which 
+    // is used to display message after we are done resizing 
+var message = document.getElementById("message"); 
+
+// timeOutFunctionId stores a numeric ID which is  
+// used by clearTimeOut to reset timer 
+var timeOutFunctionId; 
+
+// The function that we want to execute after  
+// we are done resizing 
+function workAfterResizeIsDone() { 
+    location.reload();
+} 
+
+// The following event is triggered continuously 
+// while we are resizing the window 
+window.addEventListener("resize", function() { 
+    
+    // clearTimeOut() resets the setTimeOut() timer 
+    // due to this the function in setTimeout() is  
+    // fired after we are done resizing 
+    clearTimeout(timeOutFunctionId); 
+    
+    // setTimeout returns the numeric ID which is used by 
+    // clearTimeOut to reset the timer 
+    timeOutFunctionId = setTimeout(workAfterResizeIsDone, 500); 
+}); 
