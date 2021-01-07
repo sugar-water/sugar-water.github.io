@@ -9,7 +9,7 @@ const quote = "/)"
 const arrowsMap = {
     2190: 2192, 2192: 2190,
     2191: 2193, 2193: 2191,
-    2194: 2194, 2195: 2195,
+    // 2194: 2194, 2195: 2195,
     2196: 2198, 2198: 2196,
     2197: 2199, 2199: 2197,
 };
@@ -111,17 +111,15 @@ let colorTheUnits = (units, pixels) => {
             if (!unit.titleSet && j !== 0) {
                 let rArrow = randomArrow();
                 unit.firstChild.innerText = String.fromCharCode("0x" + rArrow);
-                if (Math.random() <= 0.5) {
-                    let oArrow = arrowsMap[rArrow];
-                    unit.originalArrow = unit.firstChild.innerText;
-                    unit.reversedArrow = String.fromCharCode("0x" + oArrow);
-                    unit.addEventListener("mouseover", function() {
-                        this.firstChild.innerText = this.reversedArrow;
-                    })
-                    unit.addEventListener("mouseout", function() {
-                        this.firstChild.innerText = this.originalArrow;
-                    })
-                }
+                let oArrow = arrowsMap[rArrow];
+                unit.originalArrow = unit.firstChild.innerText;
+                unit.reversedArrow = String.fromCharCode("0x" + oArrow);
+                unit.addEventListener("mouseover", function() {
+                    this.firstChild.innerText = this.reversedArrow;
+                })
+                unit.addEventListener("mouseout", function() {
+                    this.firstChild.innerText = this.originalArrow;
+                })
             }
         }, Math.random() * 50000);
     }
@@ -134,13 +132,13 @@ const insertTitle = (title, units) => {
     lastRow.forEach((u, i) => {
         setTimeout(() => {
             u.titleSet = true;
-            if (u.originalArrow) {
-                u.originalArrow = betterTitle[i];
-            }
             if (i < betterTitle.length) {
                 u.firstChild.innerText = betterTitle[i];
             } else {
                 u.firstChild.innerText = "⚹";
+            }
+            if (u.originalArrow) {
+                u.originalArrow = betterTitle[i];
             }
         }, i * 2000);
     });
