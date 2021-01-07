@@ -133,12 +133,15 @@ const insertTitle = (title, units) => {
         setTimeout(() => {
             u.titleSet = true;
             if (i < betterTitle.length) {
+                if (u.originalArrow) {
+                    u.originalArrow = betterTitle[i];
+                }
                 u.firstChild.innerText = betterTitle[i];
             } else {
+                if (u.originalArrow) {
+                    u.originalArrow = "*";
+                }
                 u.firstChild.innerText = "⚹";
-            }
-            if (u.originalArrow) {
-                u.originalArrow = betterTitle[i];
             }
         }, i * 2000);
     });
